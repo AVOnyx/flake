@@ -93,6 +93,9 @@
     vesktop
     heroic
     vscodium
+
+    # Gnome extensions
+    gnomeExtensions.appindicator
   ];
   
   # Steam:tm:
