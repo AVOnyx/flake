@@ -1,13 +1,20 @@
-{ config, lib, pkgs, nixpkgs, ... }:
+{ config, lib, pkgs, nixpkgs, lanzaboote, ... }:
 
 {
   imports = [
       ./hardware-configuration.nix
   ];
 
-  # Use the systemd-boot EFI boot loader
-  boot.loader.systemd-boot.enable = true;
+  # Disable the systemd-boot EFI boot loader
+  # It is now managed by Lanzaboote
+  boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Enable Lanzaboote
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot";
+  };
   
   # Tell NixOS to decrypt before accessing LVM
   boot.initrd.luks.devices = {
