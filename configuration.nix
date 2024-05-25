@@ -19,6 +19,9 @@
 
   # Update kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Enable fwupd
+  services.fwupd.enable = true;
   
   # Define hostname and enable networking
   networking.hostName = "complex";
