@@ -96,6 +96,7 @@
     vesktop
     heroic
     vscodium
+    sbctl
 
     # Gnome extensions
     gnomeExtensions.appindicator
